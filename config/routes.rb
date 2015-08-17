@@ -7,9 +7,9 @@ Rails.application.routes.draw do
       resources :pages
       resources :comments
       get :csrf, to: 'csrf#index'
+      get '/s/:unique_key', to: "short#show"
     end
   end
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

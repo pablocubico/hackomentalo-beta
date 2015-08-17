@@ -39,3 +39,5 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'active_model_serializers'
 
 gem 'devise'
+
+gem 'shortener'
