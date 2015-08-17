@@ -3,11 +3,11 @@ class Api::V1::PagesController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def show
-    render json: Page.first
+    render json: Page.find(params[:id])
   end
 
   def create
-    page = Page.create(url: params[:page][:url])
+    page = Page.find_or_create_by(url: params[:page][:url])
     render json: page
   end
 
