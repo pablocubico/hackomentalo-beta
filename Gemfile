@@ -35,9 +35,9 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'activeadmin', github: 'activeadmin'
-
-gem 'active_model_serializers'
-
 gem 'devise'
 
+gem 'active_model_serializers'
 gem 'shortener'
+
+gem 'metainspector'

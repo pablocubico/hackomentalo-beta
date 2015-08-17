@@ -3,7 +3,7 @@ class Api::V1::CommentsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def create
-    comment = Comment.create(message: params[:comment][:message], page_id: params[:comment][:page_id])
+    comment = Comment.create(message: params[:comment][:message], page_id: params[:comment][:page_id], color: params[:comment][:color])
     render json: comment
   end
 

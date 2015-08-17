@@ -7,6 +7,7 @@ class Api::V1::PagesController < ApplicationController
   end
 
   def create
+    parsed_page = MetaInspector.new(params[:page][:url], download_images: false)
     page = Page.find_or_create_by(url: params[:page][:url])
     render json: page
   end
