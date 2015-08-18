@@ -6,18 +6,26 @@
 
       <div class="inner cover">
         <h1 class="cover-heading">Hackomentalo!</h1>
-        <p class="lead">Comments are allowed in this site.</p>
+        <p class="lead">
+          Comments are allowed in this site.<br>
+          Enter a URL to create a comment page for it.
+        </p>
         <div class='new_page'>
           {{#view 'new-page' contentBinding='this'}}
-            <input type='text' class="big-old-input" placeholder='Paste/type a URL'/>
-            {{#if view.hasErrors }}
-              <div>Hmmm, that does not look like a valid URL.</div>
+          {{input
+            type="text"
+            id="new-page-field"
+            placeholder="Paste/type a URL"
+            class="big-old-input"
+            value=newPageValue
+          }}
+            {{#if hasErrors }}
+              <div class="url-error">Hmmm, that does not look like a valid URL.</div>
             {{/if}}
+            <div class="clearfix"></div>
+            <button type="button" {{ action 'addPage' }} class="btn btn-lg btn-danger"><i class="fa fa-comments-o"></i> Go!</button>
           {{/view}}
         </div>
-        <p class="lead">
-          <a href="#" class="btn btn-lg btn-danger"><i class="fa fa-comments-o"></i> Go!</a>
-        </p>
       </div>
 
       <div class="inner info">
@@ -63,6 +71,56 @@
               <span><i class="fa fa-file-o"></i> {{ page.host }}</span>
             {{/link-to}}            
           {{/each}}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="section-bg bg-darker">
+
+      <div class="section-container">
+
+        <div class="features">
+          <h3>Upcoming features/tasks</h3>
+          <ul>
+            <li>Save snapshot for sites not allowing iframe embedding</li>
+            <li>Get legal advice</li>
+            <li>Define some boundaries (max chars, etc)</li>
+            <li>Prevent flooders and other attacks</li>
+            <li>Improve documentation</li>
+            <li>i18n support</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="section-bg bg-dark">
+
+      <div class="section-container">
+
+        <div class="why">
+          <h3>Why?</h3>
+          <p>
+            This tool serves two purposes:
+            <ol>
+              <li><strong>Anonymity</strong>: which is a great tool to leverage freedom of speech. Forcing identity on site comments leads to self-censorship, since users are often afraid they may be penalized in some way in the future, by lawful or unlawful ways.<br><br>
+            Privacy is key to protect people from censorship.
+            <br>
+            For example, recent laws in Argentina are forcing websites and content providers to censor user comments if they are considered hateful, or discriminatory.<br>
+            By not saving any tracking data on the server, that could become technically impossible.<br>
+              </li>
+              <li>
+                <strong>Discussion</strong>: Some news sites cease to allow comments when certain limit has been reached, or they just disallow them on certain articles, depending on the circumstances.<br>
+                This is a tool to allow commenting for those sites instantly, adding a comment sidebar on this site, embedding the original one (or a snapshot).
+              </li>
+            </ol>
+
+            <a href="http://www.vialibre.org.ar/2015/07/14/se-trata-hoy-en-diputados-la-ley-nacional-contra-la-discriminacion/">See: Fundación Vía Libre</a>
+            <br>
+          </p>
         </div>
 
       </div>

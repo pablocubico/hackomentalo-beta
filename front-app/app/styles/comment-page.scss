@@ -45,7 +45,8 @@
       text-align: left;
       font-weight: 300;
     }
-    p.created {
+    .created {
+      h4 { color: #fafafa }
       padding: 50px 0;
       text-align: left;
       color: #eee;
@@ -55,17 +56,20 @@
 
   .new_comment {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
-    left: 0;
-    background-color: black;
+    left: 0px;
+    background-color: rgba(0,0,0,.8);
     padding: 20px;
+    border-top: 1px solid rgba(255,255,255,.77);
+    box-shadow: 0 0 5px black;
     textarea {
       width: 100%;
       padding: 10px;
       color: #111;
       text-align: left;
       height: 150px;
+      font-weight: 300;
     }
   }
 

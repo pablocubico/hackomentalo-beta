@@ -6,24 +6,23 @@
 
   <aside>
     <div id="page-comments">
-      <p class="created">
+      <div class="created">
         <h4>{{ model.title }}</h4>
-        <div>{{ model.host }}</div>
-        Created {{ formattedDate }}.
-      </p>
+        <p><i class="fa fa-file-o"></i> {{ model.host }}</p>
+        <p><i class="fa fa-clock-o"></i> Created {{ formattedDate }}.</p>
+      </div>
       {{#each model.comments as |comment| }}
         <blockquote class="border-{{ comment.color }}">{{ comment.message }}</blockquote>
       {{/each}}
     </div>
     <div class='new_comment'>
       {{#view 'new-comment' contentBinding='this'}}
-      {{textarea
-        type="text"
-        id="new-comment-field"
-        placeholder="Type your comment"
-        value=newComment
-      }}
-      <button type="button" {{ action 'addComment' }} class="btn btn-primary btn-lg pull-right">Send</button>
+        {{textarea
+          id="new-comment-field"
+          placeholder="Type your comment"
+          value=newComment
+        }}
+        <button type="button" {{ action 'addComment' }} class="btn btn-primary btn-lg pull-right">Send</button>
       {{/view}}
     </div>
   </aside>

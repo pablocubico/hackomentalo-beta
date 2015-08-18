@@ -13,7 +13,20 @@ h1.cover-heading {
   font-size: 50pt;
 }
 
-.last-pages {
+.url-error {
+  background-color: rgb(255, 203, 109);
+  color: black;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  opacity: 1;
+  border-radius: 5px;
+  text-shadow: none;
+  margin-bottom: 10px;
+  font-size: 14pt;
+}
+
+.last-pages, .features {
   background: none;
   color: #eee;
   text-align: left;
@@ -22,9 +35,14 @@ h1.cover-heading {
   color: black;
   text-shadow: none;
   h3 {
-    color: orange;
-    font-size: 11pt;
+    color: #F59C9C;
+    font-size: 21pt;
+    margin-top: 0;
+    margin-bottom: 30px;
   }
+}
+
+.last-pages {
   a {
     color: #eee;
     font-weight: 300;
@@ -39,6 +57,35 @@ h1.cover-heading {
       font-size: 8pt;
       color: #999;
     }
+  }
+}
+
+.features {
+  ul {
+    margin: 0;
+    padding: 0;
+    font-size: 300;
+    li {
+      color: #eee;
+      display: block;
+      margin: 0;
+      padding: 5px 0;
+    }
+  }
+}
+
+.why {
+  background: none;
+  border: 2px solid rgba(255,255,255,.5);
+  color: #eee;
+  text-align: left;
+  font-size: 12pt;
+  padding: 20px;
+  margin: 20px;
+  color: white;
+  text-shadow: none;
+  h3 {
+    margin-top: 0;
   }
 }
 

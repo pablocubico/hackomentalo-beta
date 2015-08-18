@@ -1,17 +1,12 @@
 import Ember from 'ember';
+import AfterRender from '../mixins/after-render';
 
-export default Ember.View.extend({
+export default Ember.View.extend(AfterRender, {
   hasErrors: false,
   keyDown: function(e) {
     var self = this;
     if(e.keyCode === 13 && e.target.value.length > 5) {
-      if (this.validateURL(e.target.value)) {
-        this.content.send('addPage', e.target.value);
-        Ember.$(e.target).val('');
-        Ember.set(self, "hasErrors", false)
-      } else {
-        Ember.set(self, "hasErrors", true);
-      }
+      this.content.send('addPage', e.target.value);
     }
   },
   validateURL: function(url) {

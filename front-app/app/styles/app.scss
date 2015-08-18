@@ -67,12 +67,17 @@ body {
   padding: 10px;
   width: 80%;
   color: #222;
+  margin-bottom: 10px;
+}
+
+.section-bg {
+  padding: 20px;
 }
 
 .bg-dark {
   background: #222;
 }
 
-.section-bg {
-  margin-bottom: 40px;
+.bg-darker {
+  background: #111;
 }
