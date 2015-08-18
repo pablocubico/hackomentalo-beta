@@ -1,0 +1,78 @@
+@import "bootstrap";
+@import "bootstrap/theme";
+@import "bootstrap-overrides";
+@import "comment-page";
+@import "colors";
+@import "fonts";
+@import "landing";
+
+/*
+ * Globals
+ */
+
+body > .ember-view {
+  height: 100%;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+  background-image: url('/assets/images/opinion.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  font-family: Montserrat, sans-serif;
+}
+
+.cover.inner {
+  background-color: rgba(0,0,0,.5);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,.6);
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.big-old-input {
+  padding: 10px;
+  width: 80%;
+  color: #222;
+}
+
+.bg-dark {
+  background: #222;
+}
+
+.section-bg {
+  margin-bottom: 40px;
+}

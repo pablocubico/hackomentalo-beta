@@ -1,0 +1,72 @@
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="cover-container">
+
+      <div class="inner cover">
+        <h1 class="cover-heading">Hackomentalo!</h1>
+        <p class="lead">Comments are allowed in this site.</p>
+        <div class='new_page'>
+          {{#view 'new-page' contentBinding='this'}}
+            <input type='text' class="big-old-input" placeholder='Paste/type a URL'/>
+            {{#if view.hasErrors }}
+              <div>Hmmm, that does not look like a valid URL.</div>
+            {{/if}}
+          {{/view}}
+        </div>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-danger"><i class="fa fa-comments-o"></i> Go!</a>
+        </p>
+      </div>
+
+      <div class="inner info">
+        <div class="container-fluid no-padding">
+          <div class="row">
+            <section class="col-md-3">
+              <h2>No authors</h2>
+              <p>Just anonymous comments with no author field. A random color is assigned per browser reload, for a diffuse sense of authorship.</p>
+            </section>
+            <section class="col-md-3">
+              <h2>No tracking</h2>
+              <p>No identity data is persisted in this software.</p>
+            </section>
+            <section class="col-md-3">
+              <h2>One thread per URL.</h2>
+              <p>Just a single thread per URL, once you created a comment site for a URL, pasting it again will take you to the first ever created.</p>
+            </section>
+            <section class="col-md-3">
+              <h2>Free and open source.</h2>
+              <p>This is a free and open source project.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="mastfoot">
+        <div class="inner">
+          <p>by <a href="https://twitter.com/pablocubico">@pablocubico</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-bg bg-dark">
+
+      <div class="section-container">
+
+        <div class="last-pages">
+          <h3>Last pages enabled</h3>
+          {{#each pages as |page| }}
+            {{#link-to 'page' page}}
+               {{ page.title }}
+              <span><i class="fa fa-file-o"></i> {{ page.host }}</span>
+            {{/link-to}}            
+          {{/each}}
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

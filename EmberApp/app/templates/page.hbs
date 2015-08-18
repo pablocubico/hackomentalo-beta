@@ -1,0 +1,31 @@
+<section class="comments-layout">
+
+  <article>
+    <iframe src="{{ model.url }}" class="page-iframe"></iframe>
+  </article>
+
+  <aside>
+    <div id="page-comments">
+      <p class="created">
+        <h4>{{ model.title }}</h4>
+        <div>{{ model.host }}</div>
+        Created {{ formattedDate }}.
+      </p>
+      {{#each model.comments as |comment| }}
+        <blockquote class="border-{{ comment.color }}">{{ comment.message }}</blockquote>
+      {{/each}}
+    </div>
+    <div class='new_comment'>
+      {{#view 'new-comment' contentBinding='this'}}
+      {{textarea
+        type="text"
+        id="new-comment-field"
+        placeholder="Type your comment"
+        value=newComment
+      }}
+      <button type="button" {{ action 'addComment' }} class="btn btn-primary btn-lg pull-right">Send</button>
+      {{/view}}
+    </div>
+  </aside>
+
+</section>

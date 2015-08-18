@@ -1,0 +1,72 @@
+.comments-layout {
+  height: 100%;
+  width: 100%;
+  background: #555;
+  article {
+    display: block;
+    position: fixed;
+    vertical-align: top;
+    width: 62%;
+    height: 100%;
+    margin-top: 50px;
+    top: 0;
+  }
+  aside {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 50px 0px 240px 0px;
+    vertical-align: top;
+    width: 38%;
+    height: 100%;
+    background: #777;
+  }
+
+  .page-iframe {
+    width: 100%;
+    border: none;
+    height: 100%;
+    background-color: white;
+  }
+
+  #page-comments {
+    overflow-y: auto;
+    height: 100%;
+    color: #111;
+    text-shadow: none;
+    padding: 0 20px;
+    blockquote {
+      white-space: pre-wrap;
+      padding: 8px;
+      background: white;
+      box-shadow: 0 0 4px black;
+      font-weight: normal;
+      text-align: left;
+      font-weight: 300;
+    }
+    p.created {
+      padding: 50px 0;
+      text-align: left;
+      color: #eee;
+      text-shadow: 0;
+    }
+  }
+
+  .new_comment {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: black;
+    padding: 20px;
+    textarea {
+      width: 100%;
+      padding: 10px;
+      color: #111;
+      text-align: left;
+      height: 150px;
+    }
+  }
+
+}
