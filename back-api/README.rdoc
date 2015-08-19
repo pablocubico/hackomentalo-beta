@@ -1,3 +1,20 @@
+== BASIC NOTES
+
+- Install RVM
+- Install Ruby 2.1.2
+- Create a gemset named "hackomentalo-beta"
+- Use the gemset
+- Bundle
+
+On a fresh DigitalOcean droplet, you may need to run:
+
+    sudo apt-get install libpq-dev
+
+To install the PG gem.
+
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the

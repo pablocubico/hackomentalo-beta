@@ -4,7 +4,6 @@ import AfterRender from '../mixins/after-render';
 export default Ember.View.extend(AfterRender, {
   hasErrors: false,
   keyDown: function(e) {
-    var self = this;
     if(e.keyCode === 13 && e.target.value.length > 5) {
       this.content.send('addPage', e.target.value);
     }

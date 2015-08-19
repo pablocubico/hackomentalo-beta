@@ -6,26 +6,26 @@ export default Ember.Controller.extend({
   actions: {
     addPage: function(forceURL){
 
+      function transitionToPage(page) {
+        self.transitionToRoute('page', page);
+        Ember.$("#top-title").html(page.url);
+      }
+
+      function failure() {
+        // handle the error
+      }
+
       var url = forceURL || this.get('newPageValue');
       console.log(url);
 
       if (this.validateURL(url)) {
-        this.set('newPageValue', '')
-        this.set("hasErrors", false)
+        this.set('newPageValue', '');
+        this.set("hasErrors", false);
         var attrs = {
           url: url
         };
         var page = this.store.createRecord('page', attrs);
         var self = this;
-
-        function transitionToPage(page) {
-          self.transitionToRoute('page', page);
-          Ember.$("#top-title").html(page.url);
-        }
-
-        function failure(reason) {
-          // handle the error
-        }
 
         page.save().then(transitionToPage).catch(failure);      
       } else {

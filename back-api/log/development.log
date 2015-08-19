@@ -17019,3 +17019,49 @@ Processing by Api::V1::PagesController#index as JSON
   [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."page_id" = $1[0m  [["page_id", 26]]
   [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."page_id" = $1  [["page_id", 25]]
 Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/pages" for 127.0.0.1 at 2015-08-19 03:16:45 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::PagesController#index as JSON
+  [1m[35mPage Load (0.7ms)[0m  SELECT  "pages".* FROM "pages"   ORDER BY "pages"."id" DESC LIMIT 5
+DEPRECATION WARNING: ** Notice: embed is deprecated. **
+The use of .embed method on a Serializer will be soon removed, as this should have a global scope and not a class scope.
+Please use the global .setup method instead:
+ActiveModel::Serializer.setup do |config|
+  config.embed = :ids
+  config.embed_in_root = true
+end
+ (called from <class:PageSerializer> at /home/pablo/www/hackomentalo-ember/back-api/app/serializers/page_serializer.rb:2)
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."page_id" = $1[0m  [["page_id", 29]]
+  [1m[35mComment Load (0.5ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."page_id" = $1  [["page_id", 28]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."page_id" = $1[0m  [["page_id", 27]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."page_id" = $1  [["page_id", 26]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."page_id" = $1[0m  [["page_id", 25]]
+Completed 200 OK in 66ms (Views: 54.9ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/api/v1/comments" for 127.0.0.1 at 2015-08-19 03:17:00 -0300
+Processing by Api::V1::CommentsController#create as JSON
+  Parameters: {"comment"=>{"message"=>"Funca así?", "color"=>"blue", "created_at"=>nil, "page_id"=>"27"}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("color", "created_at", "message", "page_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["color", "blue"], ["created_at", "2015-08-19 06:17:00.943819"], ["message", "Funca así?"], ["page_id", 27], ["updated_at", "2015-08-19 06:17:00.943819"]]
+  [1m[35m (15.3ms)[0m  COMMIT
+Completed 200 OK in 24ms (Views: 1.2ms | ActiveRecord: 15.9ms)
+
+
+Started POST "/api/v1/comments" for 127.0.0.1 at 2015-08-19 03:17:07 -0300
+Processing by Api::V1::CommentsController#create as JSON
+  Parameters: {"comment"=>{"message"=>"Ahora sí, estaba cerrado el servidor.", "color"=>"blue", "created_at"=>nil, "page_id"=>"27"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("color", "created_at", "message", "page_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["color", "blue"], ["created_at", "2015-08-19 06:17:07.433086"], ["message", "Ahora sí, estaba cerrado el servidor."], ["page_id", 27], ["updated_at", "2015-08-19 06:17:07.433086"]]
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/api/v1/pages/27" for 127.0.0.1 at 2015-08-19 03:21:13 -0300
+Processing by Api::V1::PagesController#show as JSON
+  Parameters: {"id"=>"27"}
+  [1m[35mPage Load (0.2ms)[0m  SELECT  "pages".* FROM "pages"  WHERE "pages"."id" = $1 LIMIT 1  [["id", 27]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."page_id" = $1[0m  [["page_id", 27]]
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.5ms)

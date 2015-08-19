@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   controllerName: 'index',
   pages: null,
-  setupController: function(controller, model) {
+  setupController: function(controller) {
     var pages = this.store.findAll('page');
     controller.set('pages', pages);
     console.log(pages);

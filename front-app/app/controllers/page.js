@@ -5,11 +5,6 @@ export default Ember.Controller.extend({
   layoutName: 'main_layout',
   drawerShown: false,
   commentColor: Ember.computed.alias('controllers.application.color'),
-  reload: function() {
-    this.controller.get('model').reload().then(function(model) {
-      // do something with the reloaded model
-    });
-  },
   actions: {
     addComment: function(){
       var attrs = {
@@ -18,8 +13,8 @@ export default Ember.Controller.extend({
         color: this.get('commentColor')
       };
       var comment = this.store.createRecord('comment', attrs);
-      comment.save().then(function(comment) {
-        Ember.$("#page-comments").animate({ scrollTop: $('#page-comments')[0].scrollHeight}, 1000);
+      comment.save().then(function() {
+        Ember.$("#page-comments").animate({ scrollTop: Ember.$('#page-comments')[0].scrollHeight}, 1000);
       });
       this.set('newComment', '');
       return true;
@@ -33,7 +28,7 @@ export default Ember.Controller.extend({
   },
   formattedDate: function() {
     var date = this.model.get('created_at');
-    return moment(date).fromNow();
+    return Ember.moment(date).fromNow();
   }.property('date')
 
   
