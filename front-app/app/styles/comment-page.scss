@@ -8,7 +8,6 @@
     vertical-align: top;
     width: 62%;
     height: 100%;
-    margin-top: 50px;
     top: 0;
   }
   aside {
@@ -26,8 +25,10 @@
   .page-iframe {
     width: 100%;
     border: none;
-    height: 100%;
     background-color: white;
+    height: 100%;
+    top: 0px;
+    padding-top: 50px;
   }
 
   #page-comments {
@@ -73,4 +74,61 @@
     }
   }
 
+  .hide-button, #drawer-handle {
+    display: none;
+  }
+
+}
+
+@media (max-width: 767px) {
+  article {
+    width: 100% !important;
+  }
+  aside {
+    padding: 50px 0px 190px !important;
+    width: 95% !important;
+    box-shadow: 0px 0px 20px 5px #000;
+    right: -100% !important;
+    border-left: 1px solid rgba(255,255,255,.3);
+    z-index: 49999;
+    transition: right .5s;
+    .new_comment {
+      textarea {
+        height: 100px !important;
+      }
+    }
+    .hide-button {
+      display: block !important;
+      background: transparent none repeat scroll 0% 0%;
+      color: #FFF;
+      height: 46px;
+      line-height: 46px;
+      font-size: 14pt;
+      border: none;
+      padding: 0;
+    }
+    &.drawer-shown {
+      transition: right .5s;
+      right: 0 !important;
+      #drawer-handle {
+        opacity: 0;
+        transition: opacity .5s;
+      }
+    }
+    #drawer-handle {
+      display: block !important;
+      font-size: 14pt;
+      transition: opacity .5s;
+      position: absolute;
+      background: #222;
+      border: none;
+      box-shadow: 0 0 4px black;
+      color: white;
+      left: -150px;
+      bottom: 30px;
+      text-align: center;
+      line-height: 1;
+      padding: 20px 50px 20px 20px;
+    }
+  }
 }

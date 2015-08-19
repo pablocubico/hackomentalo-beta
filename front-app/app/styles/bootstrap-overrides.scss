@@ -1,3 +1,6 @@
+nav.navbar {
+  z-index: 99999;
+}
 .navbar-inverse {
   background: rgba(0,0,0,.85) !important;
   .navbar-nav {
@@ -6,7 +9,7 @@
     }
   }
   .navbar-brand {
-    font-weight: 700;
+    font-weight: 300;
     color: white;
   }
   .btn-danger {

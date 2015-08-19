@@ -4,7 +4,10 @@
     <iframe src="{{ model.url }}" class="page-iframe"></iframe>
   </article>
 
-  <aside>
+  <aside {{bind-attr class="drawerShown"}}>
+    <button id="drawer-handle" {{ action 'showDrawer' }}>
+      <i class="fa fa-comments"></i> Show
+    </button>
     <div id="page-comments">
       <div class="created">
         <h4>{{ model.title }}</h4>
@@ -22,6 +25,9 @@
           placeholder="Type your comment"
           value=newComment
         }}
+        <button tabindex="-1" {{ action 'hideDrawer' }} class="pull-left hide-button">
+          <i class="fa fa-comments"></i> Hide
+        </button>
         <button type="button" {{ action 'addComment' }} class="btn btn-primary btn-lg pull-right">Send</button>
       {{/view}}
     </div>

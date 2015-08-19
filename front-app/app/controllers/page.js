@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   needs: ["application"],
   layoutName: 'main_layout',
+  drawerShown: false,
   commentColor: Ember.computed.alias('controllers.application.color'),
   reload: function() {
     this.controller.get('model').reload().then(function(model) {
@@ -23,6 +24,12 @@ export default Ember.Controller.extend({
       this.set('newComment', '');
       return true;
     },
+    showDrawer: function() {
+      this.set('drawerShown', true);
+    },
+    hideDrawer: function() {
+      this.set('drawerShown', false);
+    }
   },
   formattedDate: function() {
     var date = this.model.get('created_at');
