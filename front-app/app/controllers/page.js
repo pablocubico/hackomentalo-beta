@@ -28,7 +28,7 @@ export default Ember.Controller.extend({
   },
   formattedDate: function() {
     var date = this.model.get('created_at');
-    return Ember.moment(date).fromNow();
+    return moment(date).fromNow();
   }.property('date')
 
   
