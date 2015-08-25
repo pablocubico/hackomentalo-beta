@@ -14,3 +14,4 @@
 # Ignore all logfiles and tempfiles.
 /back-api/log/*.log
 /back-api/tmp
+/config/database.yml
