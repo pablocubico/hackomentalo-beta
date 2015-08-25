@@ -84,6 +84,12 @@ h1.cover-heading {
   margin: 20px;
   color: white;
   text-shadow: none;
+  a {
+    &:hover {
+      color: yellow;
+    }
+    color: pink;
+  }
   h3 {
     margin-top: 0;
   }
